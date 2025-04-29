@@ -25,7 +25,9 @@ app.use(
     credentials: true,
   })
 );
-
+app.get("/",(req,res) => {
+  res.send("deploy successfully");
+})
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
