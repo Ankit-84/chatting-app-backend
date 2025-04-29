@@ -9,6 +9,7 @@ const io = new Server(server, {
   cors: {
     origin: ["http://localhost:5173","https://chatting123.netlify.app","https://chatting-app-frontend-omega.vercel.app"],
   },
+  credentials: true
 });
 
 export function getReceiverSocketId(userId) {
