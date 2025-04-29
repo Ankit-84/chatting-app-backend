@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173","https://chatting123.netlify.app","https://chatting-app-frontend-omega.vercel.app"],
+    origin: ["http://localhost:5173","https://chatting123.netlify.app","https://chatting-app-frontend-omega.vercel.app","https://chatting-app-frontend-hd52.onrender.com"],
   },
   credentials: true
 });
