@@ -21,7 +21,7 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://localhost:5173","https://chatting-app-frontend-omega.vercel.app","https://chatting123.netlify.app","https://chatting-app-frontend-hd52.onrender.com"],
+    origin: ["http://localhost:5173","https://chatting-app-frontend-hd52.onrender.com"],
     credentials: true,
   })
 );
