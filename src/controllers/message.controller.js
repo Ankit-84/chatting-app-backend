@@ -79,6 +79,16 @@ export const deleteMessage = async (req, res) => {
     if (!deletedMessage) {
       return res.status(404).json({ error: "Message not found" });
     }
+    const receiverSocketId = getReceiverSocketId(deletedMessage.receiverId);
+    const senderSocketId = getReceiverSocketId(deletedMessage.senderId);
+
+    if (receiverSocketId) {
+      io.to(receiverSocketId).emit("messageDeleted", messageId);
+    }
+
+    if (senderSocketId && senderSocketId !== receiverSocketId) {
+      io.to(senderSocketId).emit("messageDeleted", messageId);
+    }
 
     res.status(200).json({ message: "Message deleted successfully", deletedMessage });
   } catch (error) {
